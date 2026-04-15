@@ -16,6 +16,24 @@ export const projects: Project[] = [
     year: "2024",
     role: "Data Analyst / ML Practitioner",
     stack: ["Python", "Pandas", "Scikit-Learn", "NumPy", "Matplotlib", "Regression Models"],
+    techDetails: [
+      {
+        category: "Client & UI Interface",
+        stack: ["Streamlit"],
+        description: "Intentionally minimal Python-based frontend wrapper. Allows core stakeholders to input projected variables and instantly query the backend model for real-time forecasting without bloated JS bundles.",
+      },
+      {
+        category: "Data Engineering Pipeline",
+        stack: ["Pandas", "NumPy", "SQL"],
+        description: "Automated ingestion pipeline that cleans raw financial CSVs, normalizes high-variance spend values, and splits arrays for structured cross-validation workflows natively in Python.",
+      },
+      {
+        category: "Predictive ML Engine",
+        stack: ["Scikit-Learn", "XGBoost"],
+        description: "Heavy computation layer running five concurrent regression algorithms. Employs aggressive hyperparameter tuning and model-stacking to achieve 85% accurate predictions across multiple startup sector categories.",
+      }
+    ],
+    galleryImages: ["/projects/profits/demo.png"],
     category: "Machine Learning",
     accentColor: "#00E5FF",
     coverGradient: "linear-gradient(135deg, #07131a 0%, #0a2233 55%, #26140a 100%)",
@@ -57,6 +75,24 @@ export const projects: Project[] = [
     year: "2024",
     role: "AI / ML Engineer",
     stack: ["Python", "TensorFlow", "Keras", "CNN", "LSTM", "NLP"],
+    techDetails: [
+      {
+        category: "UI & Interaction",
+        stack: ["Gradio"],
+        description: "Rapid prototyped lightweight visual wrapper allowing users to drag-and-drop raw image files and observe the generated caption output in real time without browser-side processing delays.",
+      },
+      {
+        category: "Visual Feature Extraction",
+        stack: ["TensorFlow", "CNN Architectures"],
+        description: "The spatial processing cluster. Employs a predefined deep Convolutional Neural Network layered onto the input image, stripping it down to highly compressed visual feature vectors.",
+      },
+      {
+        category: "Sequence Generation (NLP)",
+        stack: ["Keras", "LSTM Networks"],
+        description: "The contextual engine. Takes the encoded feature vectors from the CNN and passes them through long short-term memory recurrent layers to sequentially decode relationships and output coherent language sentences.",
+      }
+    ],
+    galleryImages: ["/projects/captioning/demo.png"],
     category: "Artificial Intelligence",
     accentColor: "#5EEAD4",
     coverGradient: "linear-gradient(135deg, #050f1a 0%, #173047 60%, #2b170a 100%)",

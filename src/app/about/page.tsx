@@ -65,7 +65,13 @@ export default function AboutPage() {
 
         <aside className={styles.right}>
           <div className={styles.frame}>
-            <Image src="/file.svg" alt="Abstract visual mark for Palash Chaturvedi" fill className={styles.image} />
+            <Image 
+              src="/profile.png" 
+              alt="Portrait of Palash Chaturvedi" 
+              fill 
+              className={styles.image} 
+              style={{ objectFit: "cover", objectPosition: "center" }}
+            />
           </div>
           <div className={styles.currently}>
             <p className={styles.currentlyLabel}>Currently</p>

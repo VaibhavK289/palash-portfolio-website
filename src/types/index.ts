@@ -10,6 +10,8 @@ export interface Project {
   year: string;
   role: string;
   stack: string[];
+  techDetails: { category: string; stack: string[]; description: string }[];
+  galleryImages: string[];
   category: "Data Analytics" | "Machine Learning" | "Artificial Intelligence" | "Software Engineering";
   accentColor: string;
   coverGradient: string;

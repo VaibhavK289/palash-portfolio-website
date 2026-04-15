@@ -173,6 +173,81 @@
   color: var(--text-secondary);
 }
 
+.techStack {
+  display: grid;
+  gap: var(--space-5);
+  margin-top: var(--space-6);
+}
+
+.techGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.techCard {
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.techCategory {
+  font-size: var(--text-sm);
+  color: var(--accent);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+}
+
+.techDescription {
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  flex-grow: 1;
+}
+
+.techTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.techTag {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: var(--text-xs);
+  color: var(--text-primary);
+  font-family: var(--font-mono), "Courier New", monospace;
+  letter-spacing: 0.05em;
+}
+
+.gallery {
+  display: grid;
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+}
+
+.galleryImageWrapper {
+  border: 1px solid var(--border);
+  padding: 4px;
+  background: rgba(255, 255, 255, 0.02);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.galleryImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  opacity: 0.9;
+  filter: saturate(1.2) contrast(1.1);
+}
+
 .next {
   border-top: 0.5px solid var(--border);
   padding-top: var(--space-5);
@@ -209,6 +284,10 @@
   }
 
   .feature {
+    grid-template-columns: 1fr;
+  }
+
+  .techGrid {
     grid-template-columns: 1fr;
   }
 }

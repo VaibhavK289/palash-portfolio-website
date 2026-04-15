@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { projects } from "@/lib/projects";
@@ -119,6 +120,42 @@ export default async function ProjectDetailPage({ params }: ProjectDetailProps) 
           </article>
         ))}
       </section>
+
+      <section className={styles.techStack}>
+        <div className={styles.techGrid}>
+          {project.techDetails.map((tech) => (
+            <article key={tech.category} className={styles.techCard}>
+              <h3 className={styles.techCategory}>{tech.category}</h3>
+              <p className={styles.techDescription}>{tech.description}</p>
+              <div className={styles.techTags}>
+                {tech.stack.map((item) => (
+                  <span key={item} className={styles.techTag}>
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {project.galleryImages && project.galleryImages.length > 0 && (
+        <section className={styles.gallery}>
+          {project.galleryImages.map((img, index) => (
+            <div key={index} className={styles.galleryImageWrapper}>
+              <Image 
+                src={img} 
+                alt={`${project.title} screenshot`}
+                width={1200}
+                height={675}
+                className={styles.galleryImage}
+                quality={90}
+                unoptimized
+              />
+            </div>
+          ))}
+        </section>
+      )}
 
       <nav className={styles.next} aria-label="Next project">
         <p className={styles.nextLabel}>Next Project</p>
