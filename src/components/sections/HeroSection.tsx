@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { AnimatedText } from "@/components/animations/AnimatedText";
 import { MagneticButton } from "@/components/animations/MagneticButton";
@@ -21,20 +24,28 @@ export function HeroSection() {
           Data Analyst and Machine Learning Engineer focused on decision intelligence, predictive modeling, and production-ready analytics workflows.
         </p>
 
-        <div className={styles.proofGrid}>
-          <article className={styles.proofCard}>
+        <motion.div 
+          className={styles.proofGrid}
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: 0.15, delayChildren: 0.7 } }
+          }}
+        >
+          <motion.article className={styles.proofCard} variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } } }}>
             <p className={styles.proofValue}>85%</p>
             <p className={styles.proofLabel}>Forecast precision</p>
-          </article>
-          <article className={styles.proofCard}>
+          </motion.article>
+          <motion.article className={styles.proofCard} variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } } }}>
             <p className={styles.proofValue}>90%</p>
             <p className={styles.proofLabel}>Caption accuracy</p>
-          </article>
-          <article className={styles.proofCard}>
+          </motion.article>
+          <motion.article className={styles.proofCard} variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } } }}>
             <p className={styles.proofValue}>30%</p>
             <p className={styles.proofLabel}>Faster analytics cycles</p>
-          </article>
-        </div>
+          </motion.article>
+        </motion.div>
 
         <div className={styles.actions}>
           <MagneticButton>

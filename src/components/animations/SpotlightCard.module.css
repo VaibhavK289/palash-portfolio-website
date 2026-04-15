@@ -8,7 +8,9 @@
 }
 
 .card:hover {
-  border-color: var(--border-hover);
+  border-color: rgba(0, 217, 255, 0.25);
+  background: linear-gradient(180deg, rgba(0, 217, 255, 0.02), rgba(255, 159, 46, 0.02));
+  box-shadow: 0 4px 32px rgba(0, 217, 255, 0.05);
 }
 
 .spotlight {

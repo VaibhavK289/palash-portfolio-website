@@ -5,50 +5,25 @@ import styles from "./BackgroundShapes.module.css";
 
 export function BackgroundShapes() {
   return (
-    <div className={styles.container} aria-hidden="true">
-      <div className={styles.grid} />
-      
+    <motion.div 
+      className={styles.container} 
+      aria-hidden="true"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 0.6 }}
+      transition={{ duration: 2 }}
+    >
       <motion.div
-        className={`${styles.shape} ${styles.shape1}`}
+        className={styles.mesh}
         animate={{
-          x: [0, 50, 0],
-          y: [0, 30, 0],
-          scale: [1, 1.1, 1],
+          rotate: [0, 5, -5, 0],
+          scale: [1, 1.05, 1],
         }}
         transition={{
-          duration: 15,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-      
-      <motion.div
-        className={`${styles.shape} ${styles.shape2}`}
-        animate={{
-          x: [0, -40, 0],
-          y: [0, -50, 0],
-          scale: [1, 1.2, 1],
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 2,
-        }}
-      />
-
-      <motion.div
-        className={`${styles.shape} ${styles.shape3}`}
-        animate={{
-          x: [0, 20, -20, 0],
-          y: [0, -20, 20, 0],
-        }}
-        transition={{
-          duration: 18,
+          duration: 25,
           repeat: Infinity,
           ease: "linear",
         }}
       />
-    </div>
+    </motion.div>
   );
 }

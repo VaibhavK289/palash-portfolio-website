@@ -3,8 +3,8 @@
   --bg-secondary: #0d1320;
   --bg-card: #141d2b;
   --bg-card-hover: #1b2638;
-  --border: rgba(179, 192, 209, 0.16);
-  --border-hover: rgba(179, 192, 209, 0.28);
+  --border: rgba(179, 192, 209, 0.08);
+  --border-hover: rgba(179, 192, 209, 0.16);
   --accent-electric: #00d9ff;
   --accent-amber: #ff9f2e;
   --accent: var(--accent-electric);
@@ -22,7 +22,7 @@
   --electric-glow-strong: rgba(0, 217, 255, 0.3);
   --amber-glow-weak: rgba(255, 159, 46, 0.05);
   --amber-glow-medium: rgba(255, 159, 46, 0.12);
-  --interactive-gradient: linear-gradient(120deg, var(--electric-glow-weak), var(--amber-glow-weak));
+  --interactive-gradient: linear-gradient(120deg, var(--electric-glow-medium), var(--amber-glow-weak));
   --ambient-gradient: linear-gradient(180deg, transparent, var(--electric-glow-weak) 56%, var(--amber-glow-weak));
   --gradient-hero: radial-gradient(
       ellipse 80% 55% at 50% -5%,
@@ -169,4 +169,20 @@ a {
   .marquee {
     animation: none !important;
   }
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--text-primary) 20%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  display: inline-block;
+}
+
+.text-gradient-amber {
+  background: linear-gradient(135deg, var(--text-primary) 20%, var(--accent-amber) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  display: inline-block;
 }

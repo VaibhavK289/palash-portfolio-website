@@ -28,9 +28,9 @@ export function RevealOnScroll({ children, className, as = "div" }: RevealOnScro
           opacity: 1,
           y: 0,
           transition: {
-            duration: duration.normal + 0.1,
-            ease: ease.enter,
-            staggerChildren: 0.07,
+            duration: duration.normal + 0.4,
+            ease: [0.22, 1, 0.36, 1],
+            staggerChildren: 0.12,
           },
         },
       }}

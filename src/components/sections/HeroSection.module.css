@@ -19,6 +19,7 @@
   font-size: clamp(3.3rem, 9vw, 7.6rem);
   line-height: 0.92;
   max-width: 11ch;
+  text-shadow: 0 4px 32px rgba(0, 217, 255, 0.15), 0px 2px 8px rgba(0,0,0,0.5);
 }
 
 .copy {
