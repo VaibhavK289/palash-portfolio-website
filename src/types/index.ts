@@ -1,10 +1,12 @@
+import type { ReactNode } from "react";
+
 export interface Project {
   slug: string;
   title: string;
   subtitle: string;
   description: string;
   impact: string;
-  longDescription: string[];
+  longDescription: ReactNode[];
   year: string;
   role: string;
   stack: string[];

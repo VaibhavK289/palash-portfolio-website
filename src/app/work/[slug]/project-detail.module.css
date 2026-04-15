@@ -133,8 +133,14 @@
   margin-bottom: var(--space-2);
 }
 
-.body p {
+.body p,
+.narrative p {
   color: var(--text-secondary);
+}
+
+.body strong {
+  color: var(--text-primary);
+  font-weight: 500;
 }
 
 .features {

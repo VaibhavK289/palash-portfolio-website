@@ -85,22 +85,24 @@ export default async function ProjectDetailPage({ params }: ProjectDetailProps) 
         </aside>
 
         <div className={styles.body}>
-          {project.longDescription.map((paragraph, index) => (
-            <p key={index}>{paragraph}</p>
-          ))}
+          <div className={styles.narrative}>
+            {project.longDescription.map((paragraph, index) => (
+              <div key={index}>{paragraph}</div>
+            ))}
+          </div>
 
           <section className={styles.story}>
             <article>
               <h2>Problem</h2>
-              <p>{project.longDescription[0]}</p>
+              {project.longDescription[0]}
             </article>
             <article>
               <h2>Method</h2>
-              <p>{project.longDescription[1]}</p>
+              {project.longDescription[1]}
             </article>
             <article>
               <h2>Outcome</h2>
-              <p>{project.longDescription[2]}</p>
+              {project.longDescription[2]}
             </article>
           </section>
         </div>

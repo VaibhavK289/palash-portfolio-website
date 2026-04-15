@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, DM_Mono } from "next/font/google";
+import { Cormorant_Garamond, DM_Mono, Outfit } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { PageWrapper } from "@/components/layout/PageWrapper";
@@ -21,6 +21,14 @@ const dmMono = DM_Mono({
   subsets: ["latin"],
   weight: ["300", "400", "500"],
   variable: "--font-mono",
+  display: "swap",
+  preload: true,
+});
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  weight: ["300", "400", "500"],
+  variable: "--font-sans",
   display: "swap",
   preload: true,
 });
@@ -62,7 +70,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${dmMono.variable}`}>
+    <html lang="en" className={`${cormorant.variable} ${dmMono.variable} ${outfit.variable}`}>
       <body>
         <a href="#main" className={styles.skipLink}>
           Skip to content

@@ -122,10 +122,12 @@
   }
 
   .nav {
-    position: absolute;
+    position: fixed;
     top: 72px;
     left: 0;
     right: 0;
+    max-height: calc(100vh - 72px);
+    overflow-y: auto;
     display: none;
     flex-direction: column;
     align-items: flex-start;
