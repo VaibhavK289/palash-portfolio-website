@@ -54,12 +54,21 @@ export function ProjectGrid({ projects, mode = "home" }: ProjectGridProps) {
               <div className={`${styles.imageWrap} project-image`}>
                 <motion.div variants={{ rest: { scale: 1 }, hover: { scale: 1.04 } }} className={styles.imageInner}>
                   <div style={{ background: project.coverGradient }} className={styles.gradientBase} />
-                  <Image
-                    src={project.slug === "startup-profits" ? "/window.svg" : "/globe.svg"}
-                    alt={`${project.title} project preview`}
-                    fill
-                    className={styles.image}
-                  />
+                  {project.galleryImages && project.galleryImages.length > 0 ? (
+                    <Image
+                      src={project.galleryImages[0]}
+                      alt={`${project.title} project preview`}
+                      fill
+                      className={`${styles.image} ${styles.coverImage}`}
+                    />
+                  ) : (
+                    <Image
+                      src={project.slug === "startup-profits" ? "/window.svg" : "/globe.svg"}
+                      alt={`${project.title} project preview`}
+                      fill
+                      className={styles.image}
+                    />
+                  )}
                 </motion.div>
               </div>
               <div className={styles.content}>

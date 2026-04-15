@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Download, Menu } from "lucide-react";
 import { useState } from "react";
@@ -22,7 +23,7 @@ export function Navbar() {
     <header className={styles.header}>
       <div className={styles.inner}>
         <Link href="/" className={styles.brand}>
-          <span className={styles.brandDot} aria-hidden="true" />
+          <Image src="/logo.png" alt="Palash Chaturvedi Logo" width={20} height={20} className={styles.brandLogo} quality={100} unoptimized />
           <span className={styles.brandText}>PALASH CHATURVEDI</span>
         </Link>
 

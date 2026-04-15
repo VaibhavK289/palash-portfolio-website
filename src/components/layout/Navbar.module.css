@@ -32,12 +32,9 @@
   color: var(--text-primary);
 }
 
-.brandDot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 10px var(--electric-glow-medium);
+.brandLogo {
+  border-radius: 2px;
+  object-fit: contain;
 }
 
 .brandText {
