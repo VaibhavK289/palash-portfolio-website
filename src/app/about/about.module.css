@@ -1,0 +1,150 @@
+.split {
+  padding: var(--space-9) var(--page-margin) 0;
+  display: grid;
+  grid-template-columns: 55% 45%;
+  gap: var(--space-8);
+}
+
+.left {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.heading {
+  font-size: var(--text-h1);
+  line-height: var(--leading-h1);
+  max-width: 11ch;
+}
+
+.left p {
+  color: var(--text-secondary);
+}
+
+.timeline {
+  margin-top: var(--space-4);
+  display: grid;
+  gap: var(--space-4);
+}
+
+.timelineItem {
+  border-top: 0.5px solid var(--border);
+  padding-top: var(--space-3);
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: var(--space-3);
+}
+
+.timelineItem span {
+  font-family: var(--font-mono), "Courier New", monospace;
+  font-size: var(--text-xs);
+  color: var(--accent-text);
+}
+
+.timelineItem h2 {
+  font-size: var(--text-h3);
+}
+
+.right {
+  position: sticky;
+  top: 96px;
+  align-self: start;
+  display: grid;
+  gap: var(--space-4);
+}
+
+.frame {
+  position: relative;
+  height: min(62vh, 540px);
+  border: 0.5px solid var(--border);
+  background: linear-gradient(145deg, #0f0f0f, #171717);
+}
+
+.image {
+  object-fit: contain;
+  padding: var(--space-7);
+  opacity: 0.55;
+}
+
+.currently {
+  border: 0.5px solid var(--border);
+  background: var(--bg-card);
+  padding: var(--space-4);
+}
+
+.currentlyLabel {
+  color: var(--accent);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  margin-bottom: var(--space-2);
+}
+
+.currently p {
+  color: var(--text-secondary);
+}
+
+.valuesSection {
+  margin-top: var(--section-gap);
+  padding: 0 var(--page-margin);
+}
+
+.values {
+  margin-top: var(--space-6);
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.valueCard {
+  padding: var(--space-5);
+  display: grid;
+  gap: var(--space-3);
+  height: 100%;
+}
+
+.valueCard h2 {
+  font-size: var(--text-h3);
+}
+
+.valueCard p {
+  color: var(--text-secondary);
+}
+
+.skillsSection {
+  margin-top: var(--section-gap);
+  margin-bottom: var(--section-gap);
+  padding: 0 var(--page-margin);
+}
+
+.marqueeBox {
+  margin-top: var(--space-6);
+  --duration: 35s;
+  --gap: 1.5rem;
+}
+
+.skillItem {
+  font-family: var(--font-mono), "Courier New", monospace;
+  font-size: var(--text-xl);
+  color: var(--text-primary);
+  border: 0.5px solid var(--border);
+  padding: var(--space-2) var(--space-5);
+  border-radius: 40px;
+  background-color: var(--bg-card);
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+.skillItem:hover {
+  border-color: var(--accent);
+  background-color: rgba(200, 245, 66, 0.05);
+  color: var(--accent);
+}
+
+@media (max-width: 980px) {
+  .split {
+    grid-template-columns: 1fr;
+  }
+
+  .right {
+    position: static;
+  }
+}

@@ -1,0 +1,163 @@
+.page {
+  padding: var(--space-8) var(--page-margin) 0;
+  display: grid;
+  gap: var(--space-8);
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.header {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.title {
+  font-size: var(--text-h1);
+  line-height: var(--leading-h1);
+}
+
+.meta {
+  color: var(--text-secondary);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.heroImage {
+  height: 65vh;
+  border: 0.5px solid var(--border);
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-5);
+  overflow: hidden;
+}
+
+.heroLabel {
+  font-size: var(--text-xl);
+  color: var(--text-primary);
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--space-6);
+}
+
+.aside {
+  grid-column: span 3;
+  position: sticky;
+  top: 96px;
+  align-self: start;
+  display: grid;
+  gap: var(--space-4);
+}
+
+.kicker {
+  color: var(--accent);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+}
+
+.pullQuote {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: var(--text-xl);
+  line-height: 1.25;
+}
+
+.metaList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+  color: var(--text-secondary);
+}
+
+.body {
+  grid-column: span 9;
+  display: grid;
+  gap: var(--space-5);
+}
+
+.body p {
+  color: var(--text-secondary);
+}
+
+.features {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.feature {
+  border: 0.5px solid var(--border);
+  background: var(--bg-card);
+  padding: var(--space-5);
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: var(--space-4);
+}
+
+.featureNumber {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(3.5rem, 7vw, 5rem);
+  line-height: 0.82;
+  opacity: 0.08;
+}
+
+.featureTitle {
+  font-size: var(--text-h3);
+}
+
+.featureDescription {
+  margin-top: var(--space-2);
+  color: var(--text-secondary);
+}
+
+.next {
+  border-top: 0.5px solid var(--border);
+  padding-top: var(--space-5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.nextLabel {
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.nextLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-xl);
+  font-family: var(--font-display), Georgia, serif;
+}
+
+@media (max-width: 980px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .aside,
+  .body {
+    grid-column: span 1;
+    position: static;
+  }
+
+  .feature {
+    grid-template-columns: 1fr;
+  }
+}

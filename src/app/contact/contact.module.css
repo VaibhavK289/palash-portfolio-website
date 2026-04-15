@@ -1,0 +1,97 @@
+.page {
+  position: relative;
+  padding: var(--space-9) var(--page-margin) 0;
+  display: grid;
+  gap: var(--space-5);
+  overflow: hidden;
+}
+
+.bgText {
+  position: absolute;
+  right: 0;
+  top: 22%;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 15vw;
+  line-height: 0.8;
+  opacity: 0.025;
+  pointer-events: none;
+}
+
+.heading {
+  font-size: var(--text-h1);
+  line-height: var(--leading-h1);
+  max-width: 12ch;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-7);
+}
+
+.left {
+  display: grid;
+  align-content: start;
+  gap: var(--space-3);
+}
+
+.left h2 {
+  font-size: var(--text-h3);
+}
+
+.detail {
+  color: var(--text-secondary);
+}
+
+.copyButton {
+  width: fit-content;
+  min-height: 34px;
+  padding: 0 12px;
+  border: 0.5px solid var(--border);
+  border-radius: 0;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font-size: var(--text-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.form {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.form label {
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  border: 0.5px solid var(--border);
+  border-radius: 0;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font: inherit;
+  font-size: var(--text-body);
+  padding: 10px 12px;
+}
+
+.form textarea {
+  resize: vertical;
+}
+
+.errorRegion {
+  min-height: 20px;
+  color: #d68080;
+  font-size: var(--text-xs);
+}
+
+@media (max-width: 900px) {
+  .columns {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,10 @@
+.clip {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+}
+
+.word {
+  display: inline-block;
+  will-change: transform;
+}

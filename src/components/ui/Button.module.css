@@ -1,0 +1,34 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 18px;
+  border: 0.5px solid var(--border);
+  border-radius: 0;
+  background: transparent;
+  color: var(--text-primary);
+  font-family: var(--font-mono), "Courier New", monospace;
+  font-size: var(--text-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: border-color 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+}
+
+.button:hover {
+  border-color: var(--border-hover);
+}
+
+.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #080808;
+}
+
+.primary:hover {
+  background: #d6ff62;
+}
+
+.ghost {
+  background: transparent;
+}

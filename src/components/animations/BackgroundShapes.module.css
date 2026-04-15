@@ -1,0 +1,55 @@
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.4;
+  mix-blend-mode: screen;
+}
+
+.shape1 {
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle, rgba(200, 245, 66, 0.15) 0%, rgba(200, 245, 66, 0) 70%);
+  top: -10%;
+  left: -10%;
+}
+
+.shape2 {
+  width: 40vw;
+  height: 40vw;
+  background: radial-gradient(circle, rgba(143, 191, 26, 0.12) 0%, rgba(143, 191, 26, 0) 70%);
+  bottom: -20%;
+  right: -10%;
+}
+
+.shape3 {
+  width: 30vw;
+  height: 30vw;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 70%);
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 4rem 4rem;
+  mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
+  z-index: -1;
+}

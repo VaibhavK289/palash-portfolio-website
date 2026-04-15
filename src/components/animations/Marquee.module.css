@@ -1,0 +1,68 @@
+.marquee {
+  display: flex;
+  overflow: hidden;
+  padding: 1rem 0;
+  --duration: 40s;
+  --gap: 1rem;
+  gap: var(--gap);
+  user-select: none;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.horizontal {
+  flex-direction: row;
+}
+
+.vertical {
+  flex-direction: column;
+  mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+}
+
+.inner {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: space-around;
+  gap: var(--gap);
+}
+
+.innerHorizontal {
+  min-width: 100%;
+  animation: scrollX var(--duration) linear infinite;
+}
+
+.innerVertical {
+  min-height: 100%;
+  animation: scrollY var(--duration) linear infinite;
+}
+
+.reverse .innerHorizontal {
+  animation-direction: reverse;
+}
+
+.reverse .innerVertical {
+  animation-direction: reverse;
+}
+
+.pauseOnHover:hover .inner {
+  animation-play-state: paused;
+}
+
+@keyframes scrollX {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+@keyframes scrollY {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+  }
+}

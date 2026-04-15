@@ -1,0 +1,25 @@
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  background-color: var(--bg-card);
+  border: 0.5px solid var(--border);
+  transition: border-color 0.3s ease;
+}
+
+.card:hover {
+  border-color: var(--border-hover);
+}
+
+.spotlight {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card > *:not(.spotlight) {
+  position: relative;
+  z-index: 1;
+}

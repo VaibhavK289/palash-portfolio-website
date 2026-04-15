@@ -1,0 +1,16 @@
+.section {
+  margin-top: var(--section-gap);
+}
+
+.sectionHead {
+  padding: 0 var(--page-margin);
+  display: grid;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.heading {
+  font-size: var(--text-h1);
+  line-height: var(--leading-h1);
+  max-width: 11ch;
+}

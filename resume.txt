@@ -1,0 +1,63 @@
+Palash Chaturvedi
+9460195163 |chaturvedipalash21@gmail.com |LinkedIn |Github
+Education
+VIT Bhopal University B.Tech in Computer Science and Engineering                   September 2022 – Present
+•
+CGPA: 8.52/10.00
+•
+Coursework:  DSA, Artificial Intelligence, Machine Learning, DBMS, Operating Systems, Computer Networks
+Indian Institute of Technology Madras BS in Data Science and Applications        January 2023 – January 2024
+•
+CGPA: 6.57/10.00
+•
+Coursework:  Data Science, Probability & Statistics, Learning Algorithms
+Technical Skills
+Programming Languages:  Python, C++, Java, SQL
+Frameworks & Tools: Power BI, Excel, Git, GitHub, Jupyter, Google Colab, VS Code
+Libraries: NumPy, Pandas, Matplotlib, Tensorflow, ScikitLearn, Keras
+Relevant Coursework: Machine Learning, OOPs with C++ & Java, DBMS, Operating Systems, Computer Networks
+Experience
+Data Analyst                                                                                         December 2024 – March 2025
+BluePlanet Infosolutions Pvt Ltd
+•
+Collaborated with the analytics team to clean, preprocess and analyze massive datasets in Python (Pandas,
+NumPy) and SQL to generate relevant insights for client dashboards.
+•
+Created interactive visual reports with Power BI and Matplotlib, increasing reporting efficiency by 30%.
+•
+Conducted EDA on financial and customer datasets across 3+ industries, marking out important trends and 10+
+anomalies that guided high-impact business decisions.
+Projects
+Predicting Profits for different startups  |Python, Regression Models
+•
+Built and validated 5 regression models on R&D, marketing and administrative costs, enhancing financial
+forecasting accuracy, revenue optimization and business intelligence insights.
+•
+Optimized data analysis by 30% through Python libraries (Scikit-Learn, Pandas) for efficient model building.
+•
+Provides data-driven insights for financial planning by analyzing multiple regression models, ensuring optimal
+financial forecasting with over 85% precision.
+Image Captioning using AI  |Neural Networks, NLP, AI & ML
+•
+Designed and trained a hybrid deep learning model combining CNN (for image features) and LSTM (for sequence
+generation) for image captioning.
+•
+Integrated Natural Language Processing and achieved 90% caption accuracy using TensorFlow and Keras.
+•
+Improved caption generation relevance by 20% via tuning model layers and embedding parameters.
+Certificates
+Python for Data Science and Machine Learning Bootcamp, Udemy
+•
+Mastered data analysis and machine learning with Python libraries like NumPy, Pandas and TensorFlow.
+Introduction to Generative AI, Google Cloud
+•
+Completed hands-on training in Generative AI and familiarity with cloud-based AI development tools and
+platforms like GCP.
+Applied Machine Learning in Python, Coursera
+•
+Explored data clustering, predictive models and feature building for machine learning analysis.
+Achievements And Awards
+Badminton & Swimming:  State-Level Swimming & District-Level Badminton Medalist
+State Talent Search Examination: Ranked among the top 5% of candidates nationwide.
+National Mathematics Olympiad:  Awarded Gold Medal in National Mathematics Olympiad.
+----------------Page (0) Break----------------
