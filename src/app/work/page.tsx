@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { ProjectGrid } from "@/components/sections/ProjectGrid";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { projects, workFilters } from "@/lib/projects";
+import { WorkFilters } from "./WorkFilters";
 import styles from "./work.module.css";
 
 export const metadata: Metadata = {
@@ -20,24 +20,13 @@ export default function WorkPage() {
         <div className={styles.left}>
           <SectionLabel label="Selected" />
           <h1 className={styles.heading}>Work</h1>
-        </div>
-
-        <div className={styles.filters} aria-label="Project filters">
-          {workFilters.map((filter, index) => (
-            <button
-              key={filter}
-              type="button"
-              className={`${styles.filter} ${index === 0 ? styles.active : ""}`}
-            >
-              {filter}
-            </button>
-          ))}
+          <p className={styles.copy}>
+            Projects are sorted by machine learning and analytics relevance so recruiters can evaluate impact quickly.
+          </p>
         </div>
       </section>
 
-      <section className={styles.gridSection}>
-        <ProjectGrid projects={projects} mode="work" />
-      </section>
+      <WorkFilters projects={projects} filters={workFilters} />
     </>
   );
 }

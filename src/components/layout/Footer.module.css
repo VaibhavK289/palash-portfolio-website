@@ -20,26 +20,11 @@
   text-shadow: 0 4px 24px rgba(0, 229, 255, 0.2), 0 0 26px rgba(255, 138, 31, 0.18);
 }
 
-.ctaButton {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  padding: var(--space-3) var(--space-6);
-  border-radius: 40px;
-  background: var(--text-primary);
-  color: var(--bg-primary);
-  font-family: var(--font-mono), "Courier New", monospace;
-  font-weight: 600;
-  font-size: var(--text-xs);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
-}
-
-.ctaButton:hover {
-  background: var(--accent);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(0, 229, 255, 0.2), 0 0 0 1px rgba(255, 138, 31, 0.35);
+.ctaActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  justify-content: center;
 }
 
 .inner {
@@ -78,5 +63,9 @@
   .inner {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .ctaActions {
+    justify-content: flex-start;
   }
 }

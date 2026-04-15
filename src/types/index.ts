@@ -3,6 +3,7 @@ export interface Project {
   title: string;
   subtitle: string;
   description: string;
+  impact: string;
   longDescription: string[];
   year: string;
   role: string;

@@ -62,14 +62,26 @@ export default async function ProjectDetailPage({ params }: ProjectDetailProps) 
         <aside className={styles.aside}>
           <p className={styles.kicker}>Project Context</p>
           <p className={styles.pullQuote}>
-            Building this project required balancing elegant developer UX with uncompromising
-            runtime predictability.
+            Structured as Problem → Method → Outcome to make technical and business value easy to evaluate.
           </p>
+          <p className={styles.impact}>{project.impact}</p>
           <ul className={styles.metaList}>
             {project.stack.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
+          <div className={styles.links}>
+            {project.links.github ? (
+              <Link href={project.links.github} target="_blank" rel="noopener noreferrer">
+                GitHub <ArrowUpRight size={14} />
+              </Link>
+            ) : null}
+            {project.links.live ? (
+              <Link href={project.links.live} target="_blank" rel="noopener noreferrer">
+                Live Demo <ArrowUpRight size={14} />
+              </Link>
+            ) : null}
+          </div>
         </aside>
 
         <div className={styles.body}>

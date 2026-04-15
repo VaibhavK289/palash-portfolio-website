@@ -139,6 +139,35 @@
   color: var(--accent);
 }
 
+.winsSection {
+  margin-top: var(--section-gap);
+  padding: 0 var(--page-margin);
+  display: grid;
+  gap: var(--space-4);
+}
+
+.winsHeading {
+  font-size: var(--text-h2);
+  line-height: var(--leading-h1);
+  max-width: 16ch;
+}
+
+.winsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.winCard {
+  border: 1px solid var(--border);
+  background: linear-gradient(120deg, rgba(0, 229, 255, 0.04), rgba(255, 138, 31, 0.05));
+  padding: var(--space-4);
+}
+
+.winCard p {
+  color: var(--text-primary);
+}
+
 @media (max-width: 980px) {
   .split {
     grid-template-columns: 1fr;
@@ -146,5 +175,9 @@
 
   .right {
     position: static;
+  }
+
+  .winsGrid {
+    grid-template-columns: 1fr;
   }
 }

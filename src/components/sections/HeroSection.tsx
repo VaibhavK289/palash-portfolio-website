@@ -14,11 +14,11 @@ export function HeroSection() {
         <SectionLabel label="Data Analyst & ML Engineer" />
         <AnimatedText
           as="h1"
-          text="Extracting actionable insights and building intelligent systems."
+          text="Turning complex data into measurable business advantage."
           className={styles.headline}
         />
         <p className={styles.copy}>
-          I leverage data analysis and machine learning to drive strategic decisions and build predictive models that solve complex problems.
+          Data Analyst and Machine Learning Engineer focused on decision intelligence, predictive modeling, and production-ready analytics workflows.
         </p>
         <div className={styles.actions}>
           <MagneticButton>

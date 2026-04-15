@@ -10,7 +10,8 @@ interface MarqueeProps {
   children: React.ReactNode;
   vertical?: boolean;
   repeat?: number;
-  [key: string]: any;
+  role?: string;
+  "aria-label"?: string;
 }
 
 export function Marquee({

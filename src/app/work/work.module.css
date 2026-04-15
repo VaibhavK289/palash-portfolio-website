@@ -17,28 +17,50 @@
   line-height: var(--leading-h1);
 }
 
+.copy {
+  color: var(--text-secondary);
+  max-width: 60ch;
+}
+
 .filters {
+  padding: 0 var(--page-margin);
+  margin-bottom: var(--space-3);
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: flex-start;
   gap: var(--space-2);
 }
 
 .filter {
   min-height: 34px;
   padding: 0 10px;
-  border: 0.5px solid var(--border);
-  border-radius: 2px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
   background: transparent;
   color: var(--text-secondary);
   font-size: var(--text-xs);
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.filter:hover {
+  border-color: var(--accent);
+  color: var(--text-primary);
 }
 
 .active {
   border-color: var(--accent);
-  color: var(--accent);
+  color: var(--text-primary);
+  background: linear-gradient(120deg, rgba(0, 229, 255, 0.08), rgba(255, 138, 31, 0.1));
+}
+
+.resultMeta {
+  margin: var(--space-3) var(--page-margin) var(--space-5);
+  color: var(--text-secondary);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .gridSection {

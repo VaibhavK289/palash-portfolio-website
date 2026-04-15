@@ -22,7 +22,8 @@
 
 .copy {
   color: var(--text-secondary);
-  max-width: 62ch;
+  max-width: 56ch;
+  font-size: clamp(0.98rem, 1.3vw, 1.12rem);
 }
 
 .actions {

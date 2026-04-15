@@ -66,6 +66,7 @@ export function ProjectGrid({ projects, mode = "home" }: ProjectGridProps) {
                 <h3 className={styles.title}>{project.title}</h3>
                 <p className={styles.subtitle}>{project.subtitle}</p>
                 <p className={styles.description}>{project.description}</p>
+                <p className={styles.impact}>{project.impact}</p>
               </div>
             </Link>
           </motion.article>

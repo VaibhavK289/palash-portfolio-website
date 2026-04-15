@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import { Button } from "@/components/ui/Button";
 import styles from "./Footer.module.css";
 
 const links = [
@@ -14,9 +15,14 @@ export function Footer() {
     <footer className={styles.footer}>
       <div className={styles.cta}>
         <h2>Let&apos;s engineer the future.</h2>
-        <Link href="/contact" className={styles.ctaButton}>
-          Start a conversation <ArrowUpRight size={16} />
-        </Link>
+        <div className={styles.ctaActions}>
+          <Button href="/contact" variant="primary">
+            Start a conversation <ArrowUpRight size={16} />
+          </Button>
+          <Button href="/Palash_Chaturvedi_Resume.pdf" variant="ghost" target="_blank" rel="noopener noreferrer">
+            Download Resume
+          </Button>
+        </div>
       </div>
       <div className={styles.inner}>
         <p className={styles.copy}>
@@ -24,7 +30,13 @@ export function Footer() {
         </p>
         <div className={styles.links}>
           {links.map((link) => (
-            <Link key={link.label} href={link.href} className={styles.link} target="_blank" rel="noopener noreferrer">
+            <Link
+              key={link.label}
+              href={link.href}
+              className={styles.link}
+              target={link.href.startsWith("mailto:") ? undefined : "_blank"}
+              rel={link.href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+            >
               {link.label}
             </Link>
           ))}

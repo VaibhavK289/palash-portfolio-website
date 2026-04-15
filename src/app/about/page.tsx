@@ -26,6 +26,13 @@ const values = [
   { title: "Continuous learning", detail: "The field of AI and Data Science evolves rapidly, and I adapt with it." },
 ];
 
+const wins = [
+  "Improved caption relevance by 20% with tuned CNN-LSTM architecture.",
+  "Reached 90% caption accuracy on AI Image Captioning benchmarks.",
+  "Achieved 85% precision in startup profit forecasting models.",
+  "Reduced data processing time by 30% through optimized preprocessing pipelines.",
+];
+
 export default function AboutPage() {
   return (
     <>
@@ -75,6 +82,18 @@ export default function AboutPage() {
               <h2>{value.title}</h2>
               <p>{value.detail}</p>
             </SpotlightCard>
+          ))}
+        </div>
+      </section>
+
+      <section className={styles.winsSection}>
+        <SectionLabel label="Evidence" />
+        <h2 className={styles.winsHeading}>Quantified outcomes delivered through analytics and ML.</h2>
+        <div className={styles.winsGrid}>
+          {wins.map((win) => (
+            <article key={win} className={styles.winCard}>
+              <p>{win}</p>
+            </article>
           ))}
         </div>
       </section>

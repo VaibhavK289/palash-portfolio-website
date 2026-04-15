@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu } from "lucide-react";
+import { Download, Menu } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import styles from "./Navbar.module.css";
@@ -52,6 +52,15 @@ export function Navbar() {
               </Link>
             );
           })}
+          <Link
+            href="/Palash_Chaturvedi_Resume.pdf"
+            className={styles.resumeLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setOpen(false)}
+          >
+            Resume <Download size={13} />
+          </Link>
         </nav>
       </div>
     </header>

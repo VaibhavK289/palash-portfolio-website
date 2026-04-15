@@ -35,6 +35,7 @@ export function StatsRow({ stats }: { stats: Stat[] }) {
     <section className={styles.row}>
       {stats.map((stat) => (
         <article key={stat.label} className={styles.item}>
+          <p className={styles.kicker}>Outcome</p>
           <h3 className={styles.value}>
             <Counter value={stat.value} suffix={stat.suffix} />
           </h3>

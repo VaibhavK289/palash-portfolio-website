@@ -3,6 +3,7 @@ import { Cormorant_Garamond, DM_Mono } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { PageWrapper } from "@/components/layout/PageWrapper";
+import { SmoothScroll } from "@/components/layout/SmoothScroll";
 import { ScrollProgress } from "@/components/animations/ScrollProgress";
 import styles from "./layout.module.css";
 import "./globals.css";
@@ -66,6 +67,7 @@ export default function RootLayout({
         <a href="#main" className={styles.skipLink}>
           Skip to content
         </a>
+        <SmoothScroll />
         <ScrollProgress />
         <div className={styles.siteFrame}>
           <Navbar />

@@ -7,6 +7,7 @@ export const projects: Project[] = [
     subtitle: "Financial forecasting using regression models",
     description:
       "Built and validated regression models on R&D and marketing costs to enhance financial forecasting accuracy and revenue optimization.",
+    impact: "85% forecasting precision and 30% faster analysis pipeline",
     longDescription: [
       "This project focuses on providing data-driven insights for financial planning by analyzing multiple regression models.",
       "I implemented 5 different regression models to predict profits based on administrative and marketing expenditures, achieving over 85% precision in forecasting.",
@@ -16,9 +17,9 @@ export const projects: Project[] = [
     role: "Data Scientist",
     stack: ["Python", "Scikit-Learn", "Pandas", "Regression"],
     category: "Machine Learning",
-    accentColor: "#C8F542",
-    coverGradient: "linear-gradient(135deg, #0a1a00 0%, #1a3300 100%)",
-    links: { github: "https://github.com" },
+    accentColor: "#00E5FF",
+    coverGradient: "linear-gradient(135deg, #07131a 0%, #0a2233 55%, #26140a 100%)",
+    links: { github: "https://github.com/palashchaturvedi" },
     features: [
       {
         number: "01",
@@ -47,6 +48,7 @@ export const projects: Project[] = [
     subtitle: "CNN + LSTM hybrid deep learning model",
     description:
       "Designed and trained a deep learning model combining CNNs and LSTMs to generate descriptive captions for images.",
+    impact: "90% caption accuracy with 20% relevance improvement",
     longDescription: [
       "Image Captioning is a complex task requiring both computer vision (to understand the image) and natural language processing (to generate the text).",
       "I designed a hybrid architecture using a Convolutional Neural Network (CNN) for feature extraction and a Long Short-Term Memory (LSTM) network for sequence generation.",
@@ -56,9 +58,9 @@ export const projects: Project[] = [
     role: "AI/ML Engineer",
     stack: ["TensorFlow", "Keras", "NLP", "CNN", "LSTM"],
     category: "Artificial Intelligence",
-    accentColor: "#42B4F5",
-    coverGradient: "linear-gradient(135deg, #00101a 0%, #00263d 100%)",
-    links: { github: "https://github.com" },
+    accentColor: "#5EEAD4",
+    coverGradient: "linear-gradient(135deg, #050f1a 0%, #173047 60%, #2b170a 100%)",
+    links: { github: "https://github.com/palashchaturvedi" },
     features: [
       {
         number: "01",
@@ -111,4 +113,5 @@ export const stats = [
   { label: "CGPA", value: 8, suffix: ".52" },
   { label: "AI Accuracy", value: 90, suffix: "%" },
   { label: "Reporting Efficiency", value: 30, suffix: "%" },
+  { label: "Forecasting Precision", value: 85, suffix: "%" },
 ];
