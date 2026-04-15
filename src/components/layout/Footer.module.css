@@ -1,9 +1,48 @@
 .footer {
   margin-top: var(--space-10);
-  border-top: 0.5px solid var(--border);
+  background: linear-gradient(180deg, transparent, rgba(255, 90, 31, 0.03));
+}
+
+.cta {
+  padding: var(--space-9) var(--page-margin);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-5);
+  border-top: 1px solid var(--border);
+}
+
+.cta h2 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1;
+  max-width: 15ch;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  border-radius: 40px;
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  font-family: var(--font-mono), "Courier New", monospace;
+  font-weight: 600;
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ctaButton:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(255, 90, 31, 0.2);
 }
 
 .inner {
+  border-top: 1px solid var(--border);
   padding: var(--space-6) var(--page-margin);
   display: flex;
   align-items: center;

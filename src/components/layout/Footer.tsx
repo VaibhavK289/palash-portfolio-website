@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import styles from "./Footer.module.css";
 
 const links = [
@@ -10,11 +11,19 @@ const links = [
 export function Footer() {
   return (
     <footer className={styles.footer}>
+      <div className={styles.cta}>
+        <h2>Let&apos;s engineer the future.</h2>
+        <Link href="/contact" className={styles.ctaButton}>
+          Start a conversation <ArrowUpRight size={16} />
+        </Link>
+      </div>
       <div className={styles.inner}>
-        <p className={styles.copy}>Built with intention in Next.js and TypeScript.</p>
+        <p className={styles.copy}>
+          &copy; {new Date().getFullYear()} Palash Chaturvedi. Engineered with precision.
+        </p>
         <div className={styles.links}>
           {links.map((link) => (
-            <Link key={link.label} href={link.href} className={styles.link}>
+            <Link key={link.label} href={link.href} className={styles.link} target="_blank" rel="noopener noreferrer">
               {link.label}
             </Link>
           ))}

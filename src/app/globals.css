@@ -90,6 +90,7 @@ h3 {
   font-weight: 300;
   font-feature-settings: "liga" 1, "kern" 1;
   letter-spacing: var(--tracking-tight);
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
 }
 
 p,
