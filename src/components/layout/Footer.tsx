@@ -5,8 +5,12 @@ import styles from "./Footer.module.css";
 
 const links = [
   { href: "https://github.com/palashchaturvedi", label: "GitHub" },
+  {
+    href: "https://github.com/palashchaturvedi/Predicting-Profits-for-different-startups.git",
+    label: "Startup Profits Repo",
+  },
   { href: "https://www.linkedin.com/in/palashchaturvedi21/", label: "LinkedIn" },
-  { href: "/Palash_Chaturvedi_Resume.pdf", label: "Resume" },
+  { href: "/Resume.pdf", label: "Resume" },
   { href: "mailto:chaturvedipalash21@gmail.com", label: "Email" },
 ];
 
@@ -19,7 +23,7 @@ export function Footer() {
           <Button href="/contact" variant="primary">
             Start a conversation <ArrowUpRight size={16} />
           </Button>
-          <Button href="/Palash_Chaturvedi_Resume.pdf" variant="ghost" target="_blank" rel="noopener noreferrer">
+          <Button href="/Resume.pdf" variant="ghost" target="_blank" rel="noopener noreferrer">
             Download Resume
           </Button>
         </div>

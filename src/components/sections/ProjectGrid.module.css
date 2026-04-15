@@ -19,12 +19,7 @@
   inset: 0;
   border-radius: inherit;
   padding: 1px;
-  background: radial-gradient(
-    800px circle at var(--x, 50%) var(--y, 50%),
-    rgba(0, 229, 255, 0.42),
-    rgba(255, 138, 31, 0.28) 26%,
-    transparent 46%
-  );
+  background: radial-gradient(800px circle at var(--x, 50%) var(--y, 50%), var(--electric-glow-strong), transparent 42%);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -37,12 +32,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    600px circle at var(--x, 50%) var(--y, 50%),
-    rgba(0, 229, 255, 0.1),
-    rgba(255, 138, 31, 0.07) 35%,
-    transparent 52%
-  );
+  background: radial-gradient(600px circle at var(--x, 50%) var(--y, 50%), var(--electric-glow-medium), transparent 48%);
   opacity: 0;
   transition: opacity 0.5s ease;
   pointer-events: none;
@@ -80,6 +70,10 @@
   display: block;
 }
 
+.card .link {
+  border-bottom: 1px solid var(--border);
+}
+
 .imageWrap {
   position: relative;
   height: 260px;
@@ -112,10 +106,32 @@
 
 .impact {
   margin-top: var(--space-2);
-  color: var(--accent-text);
+  color: var(--accent-amber);
   font-size: var(--text-xs);
   letter-spacing: 0.04em;
   text-transform: uppercase;
+}
+
+.links {
+  margin: 0 var(--space-5) var(--space-5);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-primary);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.links a:hover {
+  color: var(--accent);
 }
 
 .title {

@@ -52,7 +52,7 @@
 .active {
   border-color: var(--accent);
   color: var(--text-primary);
-  background: linear-gradient(120deg, rgba(0, 229, 255, 0.08), rgba(255, 138, 31, 0.1));
+  background: var(--surface-overlay-strong);
 }
 
 .resultMeta {

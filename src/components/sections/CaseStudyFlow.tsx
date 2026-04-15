@@ -6,17 +6,17 @@ const flow = [
   {
     step: "01",
     title: "Problem",
-    detail: "Define a measurable business objective and constraints before touching the model.",
+    detail: "Define a measurable business objective and data constraints before model training begins.",
   },
   {
     step: "02",
     title: "Method",
-    detail: "Build robust pipelines, validate assumptions, and benchmark multiple approaches.",
+    detail: "Build and validate multiple models, then optimize preprocessing and hyperparameters.",
   },
   {
     step: "03",
     title: "Outcome",
-    detail: "Ship interpretable outputs with clear KPIs, dashboards, and next-step decisions.",
+    detail: "Ship interpretable outcomes with clear KPIs like 85% precision or 90% caption accuracy.",
   },
 ];
 

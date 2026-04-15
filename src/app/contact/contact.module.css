@@ -33,6 +33,9 @@
   display: grid;
   align-content: start;
   gap: var(--space-3);
+  padding: var(--space-4);
+  border: 1px solid var(--border);
+  background: var(--surface-overlay);
 }
 
 .left h2 {
@@ -61,12 +64,15 @@
 .copyButton:hover {
   border-color: var(--accent);
   color: var(--accent);
-  background: linear-gradient(120deg, rgba(0, 229, 255, 0.07), rgba(255, 138, 31, 0.09));
+  background: var(--surface-overlay-strong);
 }
 
 .form {
   display: grid;
   gap: var(--space-3);
+  padding: var(--space-4);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
 }
 
 .form label {
@@ -93,8 +99,8 @@
 .form textarea:focus {
   outline: none;
   border-color: var(--accent);
-  background: linear-gradient(120deg, rgba(0, 229, 255, 0.03), rgba(255, 138, 31, 0.035));
-  box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.15), 0 0 0 5px rgba(255, 138, 31, 0.08);
+  background: rgba(0, 217, 255, 0.03);
+  box-shadow: 0 0 0 3px rgba(0, 217, 255, 0.2);
 }
 
 .form textarea {
@@ -103,7 +109,7 @@
 
 .errorRegion {
   min-height: 20px;
-  color: #d68080;
+  color: var(--error);
   font-size: var(--text-xs);
 }
 

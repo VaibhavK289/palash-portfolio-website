@@ -26,7 +26,7 @@ export const socialLinks = {
   github: "https://github.com/palashchaturvedi",
   linkedin: "https://www.linkedin.com/in/palashchaturvedi21/",
   email: "chaturvedipalash21@gmail.com",
-  resume: "/Palash_Chaturvedi_Resume.pdf",
+  resume: "/Resume.pdf",
 };
 
 export const siteData = {

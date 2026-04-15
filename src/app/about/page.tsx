@@ -65,7 +65,7 @@ export default function AboutPage() {
 
         <aside className={styles.right}>
           <div className={styles.frame}>
-            <Image src="/vercel.svg" alt="Portrait mark for Palash" fill className={styles.image} />
+            <Image src="/file.svg" alt="Abstract visual mark for Palash Chaturvedi" fill className={styles.image} />
           </div>
           <div className={styles.currently}>
             <p className={styles.currentlyLabel}>Currently</p>

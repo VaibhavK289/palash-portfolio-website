@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 import type { Project } from "@/types";
 import { RevealOnScroll } from "@/components/animations/RevealOnScroll";
 import { Tag } from "@/components/ui/Tag";
@@ -54,8 +55,8 @@ export function ProjectGrid({ projects, mode = "home" }: ProjectGridProps) {
                 <motion.div variants={{ rest: { scale: 1 }, hover: { scale: 1.04 } }} className={styles.imageInner}>
                   <div style={{ background: project.coverGradient }} className={styles.gradientBase} />
                   <Image
-                    src="/next.svg"
-                    alt={`${project.title} project mark`}
+                    src={project.slug === "startup-profits" ? "/window.svg" : "/globe.svg"}
+                    alt={`${project.title} project preview`}
                     fill
                     className={styles.image}
                   />
@@ -69,6 +70,17 @@ export function ProjectGrid({ projects, mode = "home" }: ProjectGridProps) {
                 <p className={styles.impact}>{project.impact}</p>
               </div>
             </Link>
+
+            <div className={styles.links}>
+              {project.links.github ? (
+                <a href={project.links.github} target="_blank" rel="noopener noreferrer">
+                  GitHub <ArrowUpRight size={13} />
+                </a>
+              ) : null}
+              <Link href={`/work/${project.slug}`}>
+                View Case Study <ArrowUpRight size={13} />
+              </Link>
+            </div>
           </motion.article>
         );
       })}

@@ -7,7 +7,7 @@
   padding: 0 24px;
   border: 1px solid var(--border);
   border-radius: 4px;
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--surface-overlay);
   color: var(--text-primary);
   font-family: var(--font-mono), "Courier New", monospace;
   font-size: var(--text-xs);
@@ -45,7 +45,7 @@
 .button:hover {
   border-color: var(--accent);
   color: var(--accent);
-  box-shadow: 0 0 15px var(--accent-dim);
+  box-shadow: 0 0 12px var(--accent-dim);
   transform: translateY(-1px);
 }
 
@@ -56,7 +56,7 @@
 }
 
 .primary:hover {
-  background: transparent;
+  background: color-mix(in srgb, var(--accent) 82%, white 18%);
   color: var(--accent);
 }
 
@@ -70,5 +70,6 @@
 }
 
 .ghost:hover {
-  border-color: var(--border);
+  border-color: var(--accent);
+  background: var(--surface-overlay);
 }

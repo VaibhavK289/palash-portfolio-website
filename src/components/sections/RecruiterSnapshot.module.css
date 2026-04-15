@@ -26,6 +26,12 @@
   gap: var(--space-4);
 }
 
+.quickActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
 .card {
   grid-column: span 4;
   padding: var(--space-5);

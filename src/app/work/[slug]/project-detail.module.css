@@ -117,6 +117,22 @@
   gap: var(--space-5);
 }
 
+.story {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.story article {
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(0, 229, 255, 0.03), rgba(255, 138, 31, 0.05));
+  padding: var(--space-4);
+}
+
+.story h2 {
+  font-size: var(--text-h3);
+  margin-bottom: var(--space-2);
+}
+
 .body p {
   color: var(--text-secondary);
 }

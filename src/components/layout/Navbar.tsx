@@ -53,7 +53,7 @@ export function Navbar() {
             );
           })}
           <Link
-            href="/Palash_Chaturvedi_Resume.pdf"
+            href="/Resume.pdf"
             className={styles.resumeLink}
             target="_blank"
             rel="noopener noreferrer"

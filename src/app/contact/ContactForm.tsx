@@ -46,13 +46,14 @@ export function ContactForm() {
       </div>
 
       <SectionLabel label="Contact" />
-      <h1 className={styles.heading}>Let&apos;s build the next defining version of your product.</h1>
+      <h1 className={styles.heading}>Let&apos;s build your next high-impact data and AI product.</h1>
 
       <div className={styles.columns}>
         <div className={styles.left}>
           <h2>Details</h2>
           <p className={styles.detail}>Email: chaturvedipalash21@gmail.com</p>
           <p className={styles.detail}>Location: Remote</p>
+          <p className={styles.detail}>Typical response: within 24 hours</p>
           <button type="button" className={styles.copyButton} onClick={copyEmail}>
             {copied ? "Email copied" : "Copy email"}
           </button>

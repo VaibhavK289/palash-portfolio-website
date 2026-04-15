@@ -44,6 +44,20 @@ export function RecruiterSnapshot() {
         </p>
       </RevealOnScroll>
 
+      <RevealOnScroll className={styles.quickActions}>
+        <Button
+          href="https://github.com/palashchaturvedi/Predicting-Profits-for-different-startups.git"
+          variant="ghost"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Startup Profit GitHub
+        </Button>
+        <Button href="/work/image-captioning" variant="ghost">
+          Explore Image Captioning
+        </Button>
+      </RevealOnScroll>
+
       <div className={styles.grid}>
         {snapshotItems.map((item) => (
           <SpotlightCard key={item.label} className={styles.card}>
@@ -55,7 +69,7 @@ export function RecruiterSnapshot() {
       </div>
 
       <RevealOnScroll className={styles.actions}>
-        <Button href="/Palash_Chaturvedi_Resume.pdf" variant="primary" target="_blank" rel="noopener noreferrer">
+        <Button href="/Resume.pdf" variant="primary" target="_blank" rel="noopener noreferrer">
           Resume <Download size={14} />
         </Button>
         <Button href="/contact" variant="ghost">
