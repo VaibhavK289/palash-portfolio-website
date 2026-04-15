@@ -20,7 +20,7 @@
 .shape1 {
   width: 50vw;
   height: 50vw;
-  background: radial-gradient(circle, rgba(255, 90, 31, 0.15) 0%, rgba(255, 90, 31, 0) 70%);
+  background: radial-gradient(circle, rgba(0, 229, 255, 0.15) 0%, rgba(0, 229, 255, 0) 70%);
   top: -10%;
   left: -10%;
 }
@@ -28,7 +28,7 @@
 .shape2 {
   width: 40vw;
   height: 40vw;
-  background: radial-gradient(circle, rgba(255, 122, 74, 0.12) 0%, rgba(255, 122, 74, 0) 70%);
+  background: radial-gradient(circle, rgba(255, 138, 31, 0.14) 0%, rgba(255, 138, 31, 0) 70%);
   bottom: -20%;
   right: -10%;
 }

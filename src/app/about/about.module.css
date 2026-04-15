@@ -135,7 +135,7 @@
 
 .skillItem:hover {
   border-color: var(--accent);
-  background-color: rgba(255, 90, 31, 0.05);
+  background: linear-gradient(120deg, rgba(0, 229, 255, 0.05), rgba(255, 138, 31, 0.06));
   color: var(--accent);
 }
 

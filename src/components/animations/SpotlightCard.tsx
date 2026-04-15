@@ -12,7 +12,7 @@ interface SpotlightCardProps {
 export function SpotlightCard({
   children,
   className = "",
-  spotlightColor = "rgba(255, 90, 31, 0.15)",
+  spotlightColor = "rgba(0, 229, 255, 0.14)",
 }: SpotlightCardProps) {
   const divRef = useRef<HTMLDivElement>(null);
   const [isFocused, setIsFocused] = useState(false);
@@ -60,7 +60,7 @@ export function SpotlightCard({
         className={styles.spotlight}
         style={{
           opacity,
-          background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, ${spotlightColor}, transparent 40%)`,
+          background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, ${spotlightColor}, rgba(255, 138, 31, 0.08) 40%, transparent 72%)`,
         }}
         aria-hidden="true"
       />

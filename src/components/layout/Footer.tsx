@@ -3,8 +3,9 @@ import { ArrowUpRight } from "lucide-react";
 import styles from "./Footer.module.css";
 
 const links = [
-  { href: "https://github.com", label: "GitHub" },
-  { href: "https://www.linkedin.com", label: "LinkedIn" },
+  { href: "https://github.com/palashchaturvedi", label: "GitHub" },
+  { href: "https://www.linkedin.com/in/palashchaturvedi21/", label: "LinkedIn" },
+  { href: "/Palash_Chaturvedi_Resume.pdf", label: "Resume" },
   { href: "mailto:chaturvedipalash21@gmail.com", label: "Email" },
 ];
 

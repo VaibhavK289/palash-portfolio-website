@@ -29,6 +29,9 @@ export function HeroSection() {
           <Button href="/contact" variant="ghost">
             Start a Project <ArrowUpRight size={13} />
           </Button>
+          <Button href="/Palash_Chaturvedi_Resume.pdf" variant="ghost" target="_blank" rel="noopener noreferrer">
+            Resume <ArrowUpRight size={13} />
+          </Button>
         </div>
       </div>
       <div className={styles.right} aria-hidden="true">
