@@ -1,97 +1,247 @@
 .page {
   position: relative;
-  padding: var(--space-9) var(--page-margin) 0;
-  display: grid;
+  padding: var(--space-9) var(--page-margin) var(--space-9);
+  display: flex;
+  flex-direction: column;
   gap: var(--space-5);
   overflow: hidden;
+  transition: background-color 0.5s ease;
+  min-height: 100vh;
+}
+
+.theaterMode {
+  /* Subtle dimming effect handled via an internal overlay or children dimming, 
+     but setting overall bg darker can also help. */
 }
 
 .bgText {
   position: absolute;
   right: 0;
-  top: 22%;
+  top: 15%;
   font-family: var(--font-display), Georgia, serif;
   font-size: 15vw;
   line-height: 0.8;
   opacity: 0.025;
   pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.bgTextDimmed {
+  opacity: 0.005;
+}
+
+.header {
+  position: relative;
+  z-index: 2;
+  transition: opacity 0.5s ease, filter 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
 }
 
 .heading {
   font-size: var(--text-h1);
   line-height: var(--leading-h1);
-  max-width: 12ch;
+  max-width: 14ch;
+}
+
+.dimmed {
+  opacity: 0.15;
+  filter: blur(2px);
+  pointer-events: none;
+  transition: opacity 0.5s ease, filter 0.5s ease;
 }
 
 .columns {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-7);
+  position: relative;
+  z-index: 2;
 }
 
 .left {
-  display: grid;
-  align-content: start;
-  gap: var(--space-3);
-  padding: var(--space-4);
-  border: 1px solid var(--border);
-  background: var(--surface-overlay);
+  transition: opacity 0.5s ease, filter 0.5s ease;
 }
 
-.left h2 {
+/* QuickConnect Card Styles */
+.quickConnect {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(15, 15, 15, 0.4);
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+}
+
+.qcTitle {
   font-size: var(--text-h3);
 }
 
-.detail {
+.availability {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--text-xs);
   color: var(--text-secondary);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
-.copyButton {
-  width: fit-content;
-  min-height: 38px;
-  padding: 0 16px;
-  border: 1px solid var(--border);
-  border-radius: 4px;
+.pulseDot {
+  width: 8px;
+  height: 8px;
+  background-color: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+.qcBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.qcLabel {
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.emailRow, .timeRow, .socialsRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-primary);
+}
+
+.emailLink {
+  font-size: var(--text-body);
+  transition: color 0.2s ease;
+}
+
+.emailLink:hover {
+  color: var(--accent);
+}
+
+.copyBtn {
+  position: relative;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.copyBtn:hover {
+  color: var(--accent);
+}
+
+.copiedIcon {
+  color: #10b981;
+}
+
+.toast {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
   background: var(--bg-card);
   color: var(--text-primary);
-  font-size: var(--text-xs);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.copyButton:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  background: var(--surface-overlay-strong);
-}
-
-.form {
-  display: grid;
-  gap: var(--space-3);
-  padding: var(--space-4);
   border: 1px solid var(--border);
-  background: var(--bg-card);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  white-space: nowrap;
+  animation: fadeUp 0.2s ease;
 }
 
-.form label {
-  font-size: var(--text-xs);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+@keyframes fadeUp {
+  from { opacity: 0; transform: translate(-50%, 5px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+.timeVal {
+  font-variant-numeric: tabular-nums;
+}
+
+.clockIcon {
   color: var(--text-secondary);
+}
+
+.socialLink {
+  color: var(--text-secondary);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.socialLink:hover {
+  color: var(--text-primary);
+  transform: translateY(-2px);
+}
+
+
+/* Form Styles */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  padding: var(--space-6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(15, 15, 15, 0.4);
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Add a subtle radial gradient hover effect on form using a before pseudo-element? 
+   Hard to do tracking without JS, but a static glowing border works. */
+.form:hover {
+  border-color: rgba(0, 217, 255, 0.2);
+  box-shadow: 0 0 30px rgba(0, 217, 255, 0.02);
+}
+
+.inputGroup {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputGroup label {
+  position: absolute;
+  left: 16px;
+  top: 20px;
+  font-size: var(--text-body);
+  color: var(--text-secondary);
+  pointer-events: none;
+  transition: transform 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+  transform-origin: left top;
 }
 
 .form input,
 .form textarea {
   width: 100%;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  background: var(--bg-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
   color: var(--text-primary);
   font: inherit;
   font-size: var(--text-body);
-  padding: 14px 16px;
+  padding: 26px 16px 10px;
   transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
@@ -99,18 +249,84 @@
 .form textarea:focus {
   outline: none;
   border-color: var(--accent);
-  background: rgba(0, 217, 255, 0.03);
-  box-shadow: 0 0 0 3px rgba(0, 217, 255, 0.2);
+  background: rgba(0, 217, 255, 0.02);
+  box-shadow: 0 0 0 3px rgba(0, 217, 255, 0.1);
 }
 
-.form textarea {
-  resize: vertical;
+.inputError {
+  border-color: var(--error) !important;
 }
 
-.errorRegion {
-  min-height: 20px;
+.errorText {
   color: var(--error);
   font-size: var(--text-xs);
+  margin-top: 6px;
+}
+
+/* Floating label states: applied when focused, or when React value is NOT empty */
+.form input:focus ~ label,
+.form textarea:focus ~ label,
+.form input:not(:placeholder-shown) ~ label,
+.form textarea:not(:placeholder-shown) ~ label,
+.labelFloated {
+  transform: translateY(-12px) scale(0.75);
+  color: var(--accent);
+}
+
+/* Override error color for labels if needed */
+.inputError:focus ~ label,
+.inputError ~ .labelFloated {
+  color: var(--error);
+}
+
+.submitWrapper {
+  margin-top: var(--space-3);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.submitButton {
+  min-height: 48px;
+  padding: 0 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  font-size: var(--text-body);
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.submitContent {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.submitIcon {
+  transition: transform 0.2s ease;
+}
+
+.submitButton:hover:not(:disabled) .submitIcon {
+  transform: translate(2px, -2px);
+}
+
+.submitSuccess {
+  pointer-events: none;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 @media (max-width: 900px) {

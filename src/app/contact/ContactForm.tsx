@@ -1,98 +1,132 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@/components/ui/Button";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
 import { SectionLabel } from "@/components/ui/SectionLabel";
+import { QuickConnectCard } from "./QuickConnectCard";
+import { AnimatedSubmitButton } from "./AnimatedSubmitButton";
+import { AutoExpandingTextarea } from "./AutoExpandingTextarea";
 import styles from "./contact.module.css";
 
-type FormState = {
-  name: string;
-  email: string;
-  message: string;
-};
+const formSchema = z.object({
+  name: z.string().min(2, "Name must be at least 2 characters."),
+  email: z.string().email("Please enter a valid email address."),
+  message: z.string().min(10, "Message must be at least 10 characters."),
+});
 
-const initialState: FormState = {
-  name: "",
-  email: "",
-  message: "",
-};
+type FormValues = z.infer<typeof formSchema>;
 
 export function ContactForm() {
-  const [form, setForm] = useState<FormState>(initialState);
-  const [error, setError] = useState("");
-  const [copied, setCopied] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
+  const [status, setStatus] = useState<"idle" | "submitting" | "success">("idle");
 
-  const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
-      setError("Please complete all fields before submitting.");
-      return;
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<FormValues>({
+    resolver: zodResolver(formSchema),
+    defaultValues: { name: "", email: "", message: "" },
+  });
+
+  const onSubmit = async (_data: FormValues) => {
+    setStatus("submitting");
+    
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(_data),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send message.");
+      }
+
+      setStatus("success");
+      setTimeout(() => {
+        setStatus("idle");
+        reset();
+      }, 3000);
+    } catch (error) {
+      console.error(error);
+      setStatus("idle");
+      // Optionally handle errors more gracefully in the UI if needed
     }
-
-    setError("");
-    setForm(initialState);
   };
 
-  const copyEmail = async () => {
-    await navigator.clipboard.writeText("chaturvedipalash21@gmail.com");
-    setCopied(true);
-    setTimeout(() => setCopied(false), 1600);
-  };
+  const handleFocus = () => setIsFocused(true);
+  const handleBlur = () => setIsFocused(false);
 
   return (
-    <section className={styles.page}>
-      <div className={styles.bgText} aria-hidden="true">
+    <section className={`${styles.page} ${isFocused ? styles.theaterMode : ""}`}>
+      <div className={`${styles.bgText} ${isFocused ? styles.bgTextDimmed : ""}`} aria-hidden="true">
         CONTACT
       </div>
 
-      <SectionLabel label="Contact" />
-      <h1 className={styles.heading}>Let&apos;s build your next high-impact data and AI product.</h1>
+      <div className={`${styles.header} ${isFocused ? styles.dimmed : ""}`}>
+        <SectionLabel label="Contact" />
+        <h1 className={styles.heading}>Let&apos;s build something remarkable together.</h1>
+      </div>
 
       <div className={styles.columns}>
-        <div className={styles.left}>
-          <h2>Details</h2>
-          <p className={styles.detail}>Email: chaturvedipalash21@gmail.com</p>
-          <p className={styles.detail}>Location: Remote</p>
-          <p className={styles.detail}>Typical response: within 24 hours</p>
-          <button type="button" className={styles.copyButton} onClick={copyEmail}>
-            {copied ? "Email copied" : "Copy email"}
-          </button>
+        <div className={`${styles.left} ${isFocused ? styles.dimmed : ""}`}>
+          <QuickConnectCard />
         </div>
 
-        <form className={styles.form} onSubmit={onSubmit} noValidate>
-          <label htmlFor="name">Name</label>
-          <input
-            id="name"
-            name="name"
-            value={form.name}
-            onChange={(event) => setForm((prev) => ({ ...prev, name: event.target.value }))}
-          />
-
-          <label htmlFor="email">Email</label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            value={form.email}
-            onChange={(event) => setForm((prev) => ({ ...prev, email: event.target.value }))}
-          />
-
-          <label htmlFor="message">Message</label>
-          <textarea
-            id="message"
-            name="message"
-            rows={6}
-            value={form.message}
-            onChange={(event) => setForm((prev) => ({ ...prev, message: event.target.value }))}
-          />
-
-          <div aria-live="polite" className={styles.errorRegion}>
-            {error}
+        <form className={styles.form} onSubmit={handleSubmit(onSubmit)} noValidate>
+          <div className={styles.inputGroup}>
+            <input
+              id="name"
+              {...register("name")}
+              onFocus={handleFocus}
+              onBlur={handleBlur}
+              placeholder=" " /* Empty placeholder to trigger :not(:placeholder-shown) logic if doing it via CSS or handle purely via React */
+              className={errors.name ? styles.inputError : ""}
+            />
+            <label htmlFor="name">
+              Name
+            </label>
+            {errors.name && <span className={styles.errorText}>{errors.name.message}</span>}
           </div>
 
-          <Button type="submit" variant="primary">
-            Send Message
-          </Button>
+          <div className={styles.inputGroup}>
+            <input
+              id="email"
+              type="email"
+              {...register("email")}
+              onFocus={handleFocus}
+              onBlur={handleBlur}
+              placeholder=" "
+              className={errors.email ? styles.inputError : ""}
+            />
+            <label htmlFor="email">
+              Email
+            </label>
+            {errors.email && <span className={styles.errorText}>{errors.email.message}</span>}
+          </div>
+
+          <div className={styles.inputGroup}>
+            <AutoExpandingTextarea
+              id="message"
+              {...register("message")}
+              onFocus={handleFocus}
+              onBlur={handleBlur}
+              placeholder=" "
+              className={errors.message ? styles.inputError : ""}
+            />
+            <label htmlFor="message">
+              Message
+            </label>
+            {errors.message && <span className={styles.errorText}>{errors.message.message}</span>}
+          </div>
+
+          <div className={styles.submitWrapper}>
+             <AnimatedSubmitButton status={status} />
+          </div>
         </form>
       </div>
     </section>
